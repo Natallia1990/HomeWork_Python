@@ -52,7 +52,3 @@ class FormPage:
             if "success" not in self.get_field_class(field):
                 return False
         return True
-
-    # def check_form_submission(self):
-    #     assert self.check_zip_code_error()
-    #     assert self.check_fields_success()
