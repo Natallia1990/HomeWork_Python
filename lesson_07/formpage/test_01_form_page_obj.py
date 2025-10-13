@@ -17,4 +17,8 @@ def test_form_validation(driver):
     form_page.open()
     form_page.fill_form()
     form_page.submit_form()
-    form_page.check_form_submission()
+
+
+def check_form_submission(self):
+    assert self.check_zip_code_error()
+    assert self.check_fields_success()
