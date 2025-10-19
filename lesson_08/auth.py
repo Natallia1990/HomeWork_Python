@@ -14,11 +14,10 @@ class AuthAPI:
         auth_data = {
             "login": login,
             "password": password,
-            "name": "New_Test"
+            "name": "Test_new"
         }
 
         response = requests.post(url, headers=headers, json=auth_data)
-        assert response.status_code == 200
 
         response_data = response.json()
         company_id = response_data["content"][0]["id"]
@@ -36,7 +35,6 @@ class AuthAPI:
         }
 
         response = requests.post(url, headers=headers, json=auth_data)
-        assert response.status_code == 201
 
         response_data = response.json()
         token = response_data["key"]

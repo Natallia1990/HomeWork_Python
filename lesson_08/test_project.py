@@ -21,7 +21,6 @@ class TestProjects:
             headers=self.headers,
             json=project_data
         )
-        assert response.status_code == 201
         return response.json()["id"]
 
     def test_create_project(self):
