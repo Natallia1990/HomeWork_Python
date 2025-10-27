@@ -24,7 +24,8 @@ class TestSubjects:
 
         self.subject_api.cleanup_subject(test_subject_id)
 
-        success = self.subject_api.add_subject(test_subject_id, test_subject_title)
+        success = self.subject_api.add_subject(
+            test_subject_id, test_subject_title)
 
         assert success, "Предмет не был добавлен в таблицу"
 
@@ -32,7 +33,6 @@ class TestSubjects:
         assert len(rows) == 1
         assert rows[0]["subject_id"] == test_subject_id
         assert rows[0]["subject_title"] == test_subject_title
-
 
     def test_update_subject(self):
         test_subject_id = 101
@@ -50,7 +50,6 @@ class TestSubjects:
         rows = self.subject_api.select_subject_by_id(test_subject_id)
         assert len(rows) == 1
         assert rows[0]["subject_title"] == new_title
-
 
     def test_delete_subject(self):
         test_subject_id = 150
